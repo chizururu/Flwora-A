@@ -4,6 +4,8 @@ class Device {
   final int sectorId;
   final String macAddress;
   final bool status;
+  final String irrigationState;
+  final bool aiStatus;
 
   // Constructor
   Device({
@@ -12,6 +14,8 @@ class Device {
     required this.sectorId,
     required this.macAddress,
     required this.status,
+    required this.irrigationState,
+    required this.aiStatus,
   });
 
   factory Device.fromJson(Map<String, dynamic> json) => Device(
@@ -20,6 +24,8 @@ class Device {
     sectorId: json['sector_id'],
     macAddress: json['mac_address'],
     status: json['status'] == 1,
+    irrigationState: json['irrigation_state'],
+    aiStatus: json['ai_status'] == 1,
   );
 
   static List<Device> fromJsonList(List<dynamic> list) =>
@@ -31,12 +37,16 @@ class Device {
     int? sectorId,
     String? macAddress,
     bool? status,
+    String? irrigationState,
+    bool? aiStatus,
   }) => Device(
     id: id ?? this.id,
     name: name ?? this.name,
     sectorId: sectorId ?? this.sectorId,
     macAddress: macAddress ?? this.macAddress,
     status: status ?? this.status,
+    irrigationState: irrigationState ?? this.irrigationState,
+    aiStatus: aiStatus ?? this.aiStatus,
   );
 
   Map<String, dynamic> toJson() => {
@@ -45,5 +55,7 @@ class Device {
     'sector_id': sectorId,
     'mac_address': macAddress,
     'status': status ? 1 : 0,
+    'irrigation_state': irrigationState,
+    'ai_status': aiStatus ? 1 : 0,
   };
 }

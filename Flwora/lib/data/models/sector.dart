@@ -19,8 +19,8 @@ class Sector {
     userId: json['user_id'],
   );
 
-  static List<Sector> fromJsonList(List<dynamic> list) =>
-      list.map((e) => Sector.fromJson(e as Map<String, dynamic>)).toList();
+  // static List<Sector> fromJsonList(List<dynamic> list) =>
+  //     list.map((e) => Sector.fromJson(e as Map<String, dynamic>)).toList();
 
   Sector copyWith({int? id, String? name, int? deviceCount, int? userId}) =>
       Sector(

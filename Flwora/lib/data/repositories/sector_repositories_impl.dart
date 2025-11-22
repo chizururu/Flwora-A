@@ -11,14 +11,17 @@ class SectorRepositoriesImpl implements SectorRepository {
   }
 
   @override
-  Future<HttpResult<Map<String, dynamic>>> update({required String name}) {
+  Future<HttpResult<Map<String, dynamic>>> update({
+    required int id,
+    required String name,
+  }) {
     // TODO: implement update
-    return HttpService.patch(path: '/sector', data: {'name': name});
+    return HttpService.patch(path: '/sector/$id', data: {'name': name});
   }
 
   @override
-  Future<HttpResult<void>> delete() {
+  Future<HttpResult<void>> delete({required id}) {
     // TODO: implement delete
-    return HttpService.delete(path: '/sector');
+    return HttpService.delete(path: '/sector/$id');
   }
 }

@@ -4,7 +4,7 @@ class Device {
   final int sectorId;
   final String macAddress;
   final bool status;
-  final String irrigationState;
+  final int irrigationState;
   final bool aiStatus;
 
   // Constructor
@@ -24,12 +24,12 @@ class Device {
     sectorId: json['sector_id'],
     macAddress: json['mac_address'],
     status: json['status'] == 1,
-    irrigationState: json['irrigation_state'],
+    irrigationState: json['irrigation_state'] ?? 0,
     aiStatus: json['ai_status'] == 1,
   );
 
-  static List<Device> fromJsonList(List<dynamic> list) =>
-      list.map((e) => Device.fromJson(e as Map<String, dynamic>)).toList();
+  // static List<Device> fromJsonList(List<dynamic> list) =>
+  //     list.map((e) => Device.fromJson(e as Map<String, dynamic>)).toList();
 
   Device copyWith({
     int? id,
@@ -37,7 +37,7 @@ class Device {
     int? sectorId,
     String? macAddress,
     bool? status,
-    String? irrigationState,
+    int? irrigationState,
     bool? aiStatus,
   }) => Device(
     id: id ?? this.id,

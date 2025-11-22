@@ -9,7 +9,7 @@ class DeviceStorage extends TBaseStorage<List<Device>> {
   static final DeviceStorage instance = DeviceStorage._internal();
 
   // Instance global
-  factory DeviceStorage() => instance;
+  factory DeviceStorage._() => instance;
 
   @override
   // TODO: implement key

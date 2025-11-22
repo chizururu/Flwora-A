@@ -2,8 +2,8 @@ import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// import 'package:flwora/common/widgets/banner/no_connection_banner.dart';
-// import 'package:flwora/utils/helpers/network_manager.dart';
+import 'package:flwora/common/widgets/banner/no_connection_banner.dart';
+import 'package:flwora/utils/helpers/network_manager.dart';
 import 'package:get/get.dart';
 
 class TScaffold extends StatelessWidget {
@@ -22,7 +22,7 @@ class TScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final network = NetworkManager.instance;
+    final network = NetworkManager.instance;
 
     final viewsInsets = MediaQuery.of(context).viewInsets;
 
@@ -38,11 +38,11 @@ class TScaffold extends StatelessWidget {
     );
 
     // Banner offline (tidak ada koneksi internet)
-    // final bannerOffline = SliverToBoxAdapter(
-    //   child: Obx(
-    //         () => network.isOnline ? const SizedBox() : const OfflineBanner(),
-    //   ),
-    // );
+    final bannerOffline = SliverToBoxAdapter(
+      child: Obx(
+        () => network.isOnline ? const SizedBox() : const OfflineBanner(),
+      ),
+    );
 
     final slivers = <Widget>[
       // Header locator untuk pull to refresh
@@ -50,7 +50,7 @@ class TScaffold extends StatelessWidget {
       // const HeaderLocator(),
 
       // Banner offline (tidak ada koneksi internet)
-      // bannerOffline,
+      bannerOffline,
 
       // Sliver header atau appbar
       if (appbar != null) appbar!,
@@ -65,7 +65,7 @@ class TScaffold extends StatelessWidget {
 
     return AnnotatedRegion(
       value: const SystemUiOverlayStyle(
-        statusBarColor: Colors.white,
+        statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
         systemNavigationBarColor: Colors.transparent,
         systemNavigationBarIconBrightness: Brightness.dark,
@@ -78,8 +78,8 @@ class TScaffold extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             position: IndicatorPosition.locator,
           ),
-          // onRefresh: (network.isOnline || ignoreOffline) ? onRefresh : null,
-          onRefresh: onRefresh,
+          onRefresh: (network.isOnline || ignoreOffline) ? onRefresh : null,
+          // onRefresh: onRefresh,
           childBuilder: (context, physics) =>
               CustomScrollView(physics: physics, slivers: slivers),
         ),

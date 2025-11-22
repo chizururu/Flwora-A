@@ -9,7 +9,7 @@ class SectorStorage extends TBaseStorage<List<Sector>> {
   static final SectorStorage instance = SectorStorage._internal();
 
   // Instance global
-  factory SectorStorage() => instance;
+  factory SectorStorage._() => instance;
 
   @override
   // TODO: implement key

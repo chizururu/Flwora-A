@@ -5,8 +5,11 @@ abstract class SectorRepository {
   Future<HttpResult<Map<String, dynamic>>> add({required String name});
 
   // Update
-  Future<HttpResult<Map<String, dynamic>>> update({required String name});
+  Future<HttpResult<Map<String, dynamic>>> update({
+    required int id,
+    required String name,
+  });
 
   // Delete
-  Future<HttpResult<void>> delete();
+  Future<HttpResult<void>> delete({required int id});
 }

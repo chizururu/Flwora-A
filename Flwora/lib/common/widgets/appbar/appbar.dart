@@ -16,7 +16,7 @@ class TAppbar extends StatelessWidget {
 
   // Widget pinned
   final bool centerTitle;
-  final bool isPinned;
+  final bool pinned;
   final bool floating;
 
   const TAppbar({
@@ -32,7 +32,7 @@ class TAppbar extends StatelessWidget {
     this.leadingWidth,
     this.bottom,
     this.centerTitle = true,
-    this.isPinned = false,
+    this.pinned = false,
     this.floating = false,
   });
 
@@ -41,30 +41,46 @@ class TAppbar extends StatelessWidget {
     return SliverAppBar(
       title: (title != null && title!.isNotEmpty) ? Text(title!) : null,
       centerTitle: centerTitle,
-      leading: hasBackButton
-          ? IconButton(
-              onPressed:
-                  onLeadingPressed ?? () => Navigator.of(context).maybePop(),
-              icon: const Icon(Icons.arrow_back_ios_outlined),
-            )
-          : leadingIcon != null
-          ? IconButton(onPressed: onLeadingPressed, icon: Icon(leadingIcon))
-          : (leading != null && leading!.isNotEmpty)
-          ? Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: leading!,
-            )
-          : null,
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 16),
+        child: hasBackButton
+            ? GestureDetector(
+                onTap:
+                    onLeadingPressed ?? () => Navigator.of(context).maybePop(),
+                behavior: HitTestBehavior.translucent,
+                child: const Icon(Icons.arrow_back),
+              )
+            : leadingIcon != null
+            ? GestureDetector(
+                onTap: onLeadingPressed,
+                behavior: HitTestBehavior.translucent,
+                child: Icon(leadingIcon),
+              )
+            : (leading != null && leading!.isNotEmpty)
+            ? Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: leading!,
+              )
+            : null,
+      ),
       actions: (actions != null && actions!.isNotEmpty)
           ? actions
-          : actions != null
-          ? [IconButton(onPressed: onActionPressed, icon: Icon(actionIcon))]
+          : actionIcon != null
+          ? [
+              GestureDetector(
+                onTap: onActionPressed,
+                behavior: HitTestBehavior.translucent,
+                child: Icon(actionIcon),
+              ),
+            ]
           : null,
       leadingWidth: leadingWidth,
+      automaticallyImplyLeading: false,
+      actionsPadding: const EdgeInsets.only(right: 16),
       bottom: bottom,
-      pinned: isPinned,
+      pinned: pinned,
       floating: floating,
     );
   }

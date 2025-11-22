@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flwora/utils/constants/server.dart';
 import 'package:flwora/utils/http/http_result.dart';
 
 class HttpService {
@@ -8,12 +9,12 @@ class HttpService {
   // Inisialisasi pada Dio
   static final Dio _dio = Dio(
     BaseOptions(
-      baseUrl: "https://srv894639.hstgr.cloud/api",
+      baseUrl: "${TServer.url}/api",
       connectTimeout: const Duration(seconds: 20),
       receiveTimeout: const Duration(seconds: 20),
       sendTimeout: const Duration(seconds: 20),
       validateStatus: (statusCode) =>
-      statusCode != null && statusCode >= 200 && statusCode < 300,
+          statusCode != null && statusCode >= 200 && statusCode < 300,
     ),
   );
 

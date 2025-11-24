@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flwora/bindings/bindings.dart';
-import 'package:flwora/features/app/screens/home/home.dart';
+import 'package:flwora/features/app/screens/root_main.dart';
 import 'package:flwora/features/authentication/screens/login.dart';
 import 'package:flwora/utils/helpers/session_data_store.dart';
 import 'package:flwora/utils/theme/theme.dart';
@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
 
     // Jika data session atau user sudah ada maka ke halaman home
     return Obx(
-      () => session.isAuthenticated ? const HomeScreen() : const LoginScreen(),
+      () => session.isAuthenticated ? const RootScreen() : const LoginScreen(),
     );
   }
 }

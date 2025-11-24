@@ -5,7 +5,7 @@ import 'package:flwora/common/widgets/dropdown/t_drop_down_menu.dart';
 import 'package:flwora/data/models/sector.dart';
 import 'package:flwora/features/app/controllers/logout_controller.dart';
 import 'package:flwora/features/app/screens/home/widgets/sector_tab_bar.dart';
-import 'package:flwora/features/sector/screens/add_sector_screen.dart';
+import 'package:flwora/features/sector/screens/sector_add_screen.dart';
 import 'package:flwora/utils/local_storage/data_storage/user_storage.dart';
 import 'package:flwora/utils/theme/widget_themes/text_theme.dart';
 import 'package:get/get.dart';
@@ -35,7 +35,7 @@ class HomeHeader extends StatelessWidget {
           items: [
             MenuItem(
               label: 'Tambah Sektor',
-              onTap: () => Get.to(const AddSectorScreen()),
+              onTap: () => Get.to(const SectorAddScreen()),
             ),
             MenuItem(label: 'Tambah Perangkat', onTap: () => ()),
           ],

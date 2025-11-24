@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flwora/common/widgets/dropdown/base_menu_entry.dart';
+import 'package:flwora/utils/constants/colors.dart';
 
 class TDropdownMenu<T> extends StatelessWidget {
   final List<BaseMenuEntry<T>> items;
@@ -31,7 +32,7 @@ class TDropdownMenu<T> extends StatelessWidget {
       context: buttonContext,
       barrierDismissible: true,
       barrierLabel: 'Menu',
-      barrierColor: const Color(0x26000000),
+      barrierColor: TColors.barrier,
       transitionDuration: const Duration(milliseconds: 150),
       pageBuilder: (context, animation, secondaryAnimation) {
         final double top = position == PopupMenuPosition.under

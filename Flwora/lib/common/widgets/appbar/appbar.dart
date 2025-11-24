@@ -5,6 +5,7 @@ class TAppbar extends StatelessWidget {
   final bool hasBackButton;
   final IconData? leadingIcon;
   final IconData? actionIcon;
+  final Color? actionIconColor;
   final List<Widget>? leading;
   final List<Widget>? actions;
   final VoidCallback? onLeadingPressed;
@@ -25,6 +26,7 @@ class TAppbar extends StatelessWidget {
     this.hasBackButton = false,
     this.leadingIcon,
     this.actionIcon,
+    this.actionIconColor,
     this.leading,
     this.actions,
     this.onLeadingPressed,
@@ -72,7 +74,7 @@ class TAppbar extends StatelessWidget {
               GestureDetector(
                 onTap: onActionPressed,
                 behavior: HitTestBehavior.translucent,
-                child: Icon(actionIcon),
+                child: Icon(actionIcon, color: actionIconColor),
               ),
             ]
           : null,

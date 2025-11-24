@@ -4,7 +4,7 @@ import 'package:flwora/common/widgets/dropdown/menu_extras.dart';
 import 'package:flwora/common/widgets/dropdown/menu_item.dart';
 import 'package:flwora/common/widgets/dropdown/t_drop_down_menu.dart';
 import 'package:flwora/data/models/sector.dart';
-import 'package:flwora/features/sector/screens/manager_sector_screen.dart';
+import 'package:flwora/features/sector/screens/sector_manager_screen.dart';
 import 'package:flwora/utils/theme/widget_themes/text_theme.dart';
 import 'package:get/get.dart';
 

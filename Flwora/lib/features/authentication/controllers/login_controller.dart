@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flwora/data/models/device.dart';
+import 'package:flwora/utils/device/device_utils.dart';
 import 'package:flwora/utils/helpers/toast_helpers.dart';
 import 'package:flwora/utils/local_storage/data_storage/device_storage.dart';
 import 'package:get/get.dart';
@@ -27,6 +28,9 @@ class LoginController extends GetxController {
 
   // Register
   void login() async {
+    // Tutup keyboard
+    DeviceUtils.hideKeyboard();
+
     // Kosongkan validasi error
     errors.value = null;
 

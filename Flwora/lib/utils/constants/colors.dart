@@ -5,6 +5,9 @@ class TColors {
   static const Color buttonPrimary = Color(0xFF556A5C);
   static const Color buttonSecondary = Color(0xFFF5F5F5);
 
+  // Barrier colors
+  static const Color barrier = Color(0x26000000);
+
   // Text colors
   static const Color textPrimary = Color(0xFF181C14);
   static const Color textPrimary40 = Color(0x8A000000);
@@ -23,6 +26,7 @@ class TColors {
 
   // Colors
   static const Color carbonBlack = Color(0xFF181C14);
+  static const Color black40 = Color(0x8A000000);
   static const Color granite = Color(0xFF556A5C);
   static const Color white = Color(0xFFFFFFFF);
   static const Color whiteSmoke = Color(0xFFF5F5F5);

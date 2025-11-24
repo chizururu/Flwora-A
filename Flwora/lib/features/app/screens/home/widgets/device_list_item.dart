@@ -1,3 +1,4 @@
+import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flwora/common/widgets/card/card.dart';
 import 'package:flwora/data/models/device.dart';
@@ -30,13 +31,22 @@ class DeviceListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: 25,
-              height: 25,
-              child: Image.asset(
-                'assets/images/machine.png',
-                fit: BoxFit.contain, // supaya tidak kepotong
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Gambar devices
+                SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: Image.asset(
+                    'assets/images/machine.png',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                // Status ai icons
+                if (!device.aiStatus)
+                  Icon(BootstrapIcons.stars, color: TColors.granite, size: 14),
+              ],
             ),
             SizedBox(height: 20),
             Text(

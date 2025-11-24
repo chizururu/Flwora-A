@@ -22,6 +22,7 @@ class LoginFormWidget extends StatelessWidget {
               controller: controller.email,
               label: 'Email',
               errorMessage: controller.errors.value?['email']?.first,
+              enabled: controller.isLoading.value,
             ),
           ),
 
@@ -33,15 +34,19 @@ class LoginFormWidget extends StatelessWidget {
               controller: controller.password,
               label: 'Password',
               errorMessage: controller.errors.value?['password']?.first,
+              enabled: controller.isLoading.value,
             ),
           ),
           const SizedBox(height: 20),
 
           // Login
-          Obx(() =>
-              TPrimaryButton(text: 'Login',
-                onPressed: () => controller.login(),
-                isLoading: controller.isLoading.value,)),
+          Obx(
+            () => TPrimaryButton(
+              text: 'Login',
+              onPressed: () => controller.login(),
+              isLoading: controller.isLoading.value,
+            ),
+          ),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flwora/utils/device/device_utils.dart';
 import 'package:get/get.dart';
 
 import '../../../data/models/sector.dart';
@@ -24,6 +25,9 @@ class RegisterController extends GetxController {
 
   // Register
   void register() async {
+    // Tutup keyboard
+    DeviceUtils.hideKeyboard();
+
     // Kosongkan validasi error
     errors.value = null;
 

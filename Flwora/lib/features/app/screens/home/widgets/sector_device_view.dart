@@ -26,7 +26,7 @@ class SectorDeviceView extends StatelessWidget {
             itemCount: devices.length,
             itemBuilder: (_, i) {
               final device = devices[i];
-              print(device.status);
+
               return DeviceListItem(
                 device: devices[i],
                 onPressed: () => Get.to(DeviceDetailScreen(device: device)),

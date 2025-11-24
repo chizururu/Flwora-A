@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                           final devices = (device.data ?? [])
                               .where((d) => d.sectorId == s.id)
                               .toList();
-                          print(devices);
+
                           return SectorDeviceView(devices: devices);
                         },
                       ),

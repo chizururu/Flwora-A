@@ -1,11 +1,18 @@
 import 'package:dio/dio.dart';
+import 'package:flwora/utils/constants/endpoints.dart';
 import 'package:flwora/utils/http/http_response.dart';
 
-class HttpClient {
-  const HttpClient._();
+class THttpClient {
+  const THttpClient._();
 
   // Inisialisasi pada DIO
-  static final Dio _dio = Dio(BaseOptions(baseUrl: ""));
+  static final Dio _dio = Dio(
+    BaseOptions(
+      baseUrl: "${Endpoints.baseUrl}/api",
+      sendTimeout: const Duration(seconds: 10),
+      receiveTimeout: const Duration(seconds: 10),
+    ),
+  );
 
   static Future<TResponse<T>> _req<T>({
     required Future<Response<dynamic>> Function() call,

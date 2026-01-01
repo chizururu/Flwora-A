@@ -6,11 +6,13 @@ class TRefreshHeader extends BuilderHeader {
     super.triggerOffset = 100.0,
     super.clamping = false,
     super.position = IndicatorPosition.locator,
-  }) : super(builder: (context, state) => TRefreshIndicator());
+  }) : super(builder: (context, state) => TRefreshIndicator(state: state));
 }
 
 class TRefreshIndicator extends StatelessWidget {
-  const TRefreshIndicator({super.key});
+  final IndicatorState state;
+
+  const TRefreshIndicator({super.key, required this.state});
 
   @override
   Widget build(BuildContext context) {

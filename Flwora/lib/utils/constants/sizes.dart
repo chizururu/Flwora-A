@@ -1,4 +1,4 @@
-class TSizes {
+class Sizes {
   // Padding, spacing, dan margin size
   static const double xs = 4.0;
   static const double sm = 8.0;

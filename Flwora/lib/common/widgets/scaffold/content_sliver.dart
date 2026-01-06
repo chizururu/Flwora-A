@@ -9,7 +9,10 @@ class ContentSliver extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final contentPadding = Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Sizes.lg),
+      padding: const EdgeInsets.symmetric(
+        horizontal: Sizes.lg,
+        vertical: Sizes.sm,
+      ),
       child: content,
     );
 

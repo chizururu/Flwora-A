@@ -28,6 +28,24 @@ class Device {
     aiStatus: json['ai_status'] == 1,
   );
 
+  Device copyWith({
+    int? id,
+    String? name,
+    int? sectorId,
+    String? macAddress,
+    bool? status,
+    int? irrigationState,
+    bool? aiStatus,
+  }) => Device(
+    id: id ?? this.id,
+    name: name ?? this.name,
+    sectorId: sectorId ?? this.sectorId,
+    macAddress: macAddress ?? this.macAddress,
+    status: status ?? this.status,
+    irrigationState: irrigationState ?? this.irrigationState,
+    aiStatus: aiStatus ?? this.aiStatus,
+  );
+
   Map<String, dynamic> toJson() => {
     'id': id,
     'name': name,

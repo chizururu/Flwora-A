@@ -21,20 +21,7 @@ class PairDevicePage extends StatelessWidget {
       content: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Jika GPS dan Bluetooth mati
-          RequestPermissionBanner(),
-          SizedBox(height: Sizes.xxl),
-
-          // Jika GPS dan Bluetooth mati
-          DeviceDiscoveryUnavailable(),
-
-          SizedBox(height: Sizes.xxl),
-
-          // Jika GPS dan Bluetooth hidup
-          DeviceDiscoveryIndicator(),
-          SizedBox(height: Sizes.xxl),
-        ],
+        children: [],
       ),
     );
   }

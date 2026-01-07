@@ -19,6 +19,14 @@ class Sector {
     userId: json['user_id'],
   );
 
+  Sector copyWith({int? id, String? name, int? deviceCount, int? userId}) =>
+      Sector(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        deviceCount: deviceCount ?? this.deviceCount,
+        userId: userId ?? this.userId,
+      );
+
   String get deviceCountLabel =>
       deviceCount == 0 ? 'Tidak ada perangkat' : '$deviceCount perangkat';
 

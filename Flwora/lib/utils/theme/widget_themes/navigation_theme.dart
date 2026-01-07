@@ -4,5 +4,5 @@ class TNavigationTheme {
   TNavigationTheme._();
 
   static final BottomNavigationBarThemeData data =
-      BottomNavigationBarThemeData();
+  BottomNavigationBarThemeData();
 }

@@ -22,7 +22,7 @@ class RequestPermissionBanner extends StatelessWidget {
           Expanded(
             child: Text(
               "Aktifkan Bluetooth dan GPS agar perangkat di sekitar dapat ditemukan.",
-              style: TTextTheme.overline.copyWith(color: TColors.textSecondary),
+              style: TTextTheme.overline.copyWith(color: Color(0xFF4895ef)),
               textAlign: TextAlign.justify,
               softWrap: true,
             ),

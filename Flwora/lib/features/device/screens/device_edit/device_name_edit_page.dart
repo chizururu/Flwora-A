@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flwora/common/widgets/appbar/appbar.dart';
+import 'package:flwora/common/widgets/forms/text_field.dart';
 import 'package:flwora/common/widgets/scaffold/scaffold.dart';
-import 'package:flwora/data/models/device.dart';
 
-class DashboardDeviceScreen extends StatelessWidget {
-  final Device device;
-
-  const DashboardDeviceScreen({super.key, required this.device});
+class EditDeviceNamePage extends StatelessWidget {
+  const EditDeviceNamePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return TScaffold(
-      header: TAppBar(showBackButton: true, title: device.name),
+      header: TAppBar(title: 'Ubah Perangkat'),
       content: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [],
+        children: [
+          TTextFormField(
+            controller: TextEditingController(),
+            labelText: 'Nama Perangkat',
+          ),
+        ],
       ),
     );
   }

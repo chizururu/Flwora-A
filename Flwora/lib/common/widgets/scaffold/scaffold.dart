@@ -28,7 +28,7 @@ class TScaffold extends StatelessWidget {
     );
 
     return TAnnotatedRegion(
-      child: Scaffold(body: SafeArea(child: mainContent)),
+      child: Scaffold(body: SafeArea(top: false, child: mainContent)),
     );
   }
 }

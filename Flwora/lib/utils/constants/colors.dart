@@ -5,6 +5,7 @@ class TColors {
   static const Color textPrimary = Color(0xFF181C14);
   static const Color textSecondary = Color(0x8A000000);
   static const Color textDanger = Color(0xFFD90429);
+  static const Color textGranite = Color(0xFF556A5C);
 
   // Button
   static const Color buttonPrimary = Color(0xFF556A5C);

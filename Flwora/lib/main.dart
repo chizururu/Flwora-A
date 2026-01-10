@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flwora/app.dart';
+import 'package:flutter/cupertino.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  runApp(const App());
 }

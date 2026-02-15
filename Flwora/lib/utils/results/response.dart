@@ -1,4 +1,4 @@
-sealed class TResponse<T> {
+abstract class TResponse<T> {
   final int code;
   final String? message;
 

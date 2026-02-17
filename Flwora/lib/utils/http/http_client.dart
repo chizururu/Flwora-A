@@ -15,6 +15,5 @@ abstract class HttpClient {
 
   Future<TResponse<T>> delete<T>({
     required String path,
-    required Map<String, dynamic> data,
   });
 }

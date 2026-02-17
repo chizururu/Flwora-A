@@ -48,7 +48,6 @@ class DioHttpAdapter implements HttpClient {
   @override
   Future<TResponse<T>> delete<T>({
     required String path,
-    required Map<String, dynamic> data,
   }) async {
     try {
       final response = await dio.delete(path);
